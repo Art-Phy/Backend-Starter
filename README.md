@@ -1,3 +1,11 @@
+<p align="left">
+  <img src="https://img.shields.io/badge/python-3.10+-blue.svg" />
+  <img src="https://img.shields.io/badge/CLI-Project%20Generator-orange" />
+  <img src="https://img.shields.io/badge/GitFlow-Automated-green" />
+  <img src="https://img.shields.io/badge/Version-v0.2.0-success" />
+  <img src="https://img.shields.io/badge/License-MIT-lightgrey" />
+</p>
+
 ### Backend Starter
 
 Backend Starter es una herramienta CLI desarrollada en Python para generar de forma automática la estructura inicial de un proyecto backend.
@@ -6,7 +14,7 @@ El objetivo es evitar repetir manualmente la creación de carpetas y archivos co
 
 #### Funcionalidades
 
-- Creación automática de un nuevo proyecto.
+- Creación automática de un nuevo proyecto backend.
 - Generación de archivos base:
   - README.md
   - CHANGELOG.md
@@ -15,7 +23,8 @@ El objetivo es evitar repetir manualmente la creación de carpetas y archivos co
 - Creación de estructura `src/`.
 - Creación de paquete Python inicial.
 - Creación de carpeta `tests/`.
-- Preparado para evolucionar hacia automatización con Git, entornos virtuales y plantillas.
+- Inicialización automática de repositorio **Git**
+- Creación automática de rama **develop**
 
 #### Estructura generada
 
@@ -43,8 +52,6 @@ Este proyecto nace como una herramienta práctica para automatizar el arranque d
 
 Está pensado para crecer progresivamente con nuevas funcionalidades como:
 
-* Inicialización automática de Git.
-* Creación de rama develop.
 * Creación opcional de entorno virtual.
 * Plantillas para proyectos CLI.
 * Plantillas para proyectos FastAPI.
@@ -54,3 +61,4 @@ Está pensado para crecer progresivamente con nuevas funcionalidades como:
 * Python 3
 * pathlib
 * CLI básica con sys.argv
+* Subprocess
