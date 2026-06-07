@@ -1,4 +1,5 @@
 
+import subprocess
 from pathlib import Path
 
 from backend_starter.templates import(
@@ -53,5 +54,20 @@ def create_project(project_name: str) -> None:
         encoding="utf-8",
     )
 
-
+    initialize_git(project_path)
     print(f"Proyecto '{project_name}' creado")
+
+
+
+def initialize_git(project_path: Path) -> None:
+    subprocess.run(
+        ["git", "init"],
+        cwd=project_path,
+        check=True,
+    )
+
+    subprocess.run(
+        ["git", "checkout", "-b", "develop"],
+        cwd=project_path,
+        check=True,
+    )
