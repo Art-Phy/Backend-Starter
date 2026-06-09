@@ -10,7 +10,7 @@ from backend_starter.templates import(
 
 
 
-def create_project(project_name: str) -> None:
+def create_project(project_name: str, create_venv: bool = False) -> None:
     project_path = Path(project_name)
 
     package_name = project_name.replace("-", "_")
@@ -55,6 +55,10 @@ def create_project(project_name: str) -> None:
     )
 
     initialize_git(project_path)
+
+    if create_venv:
+        create_virtual_enviroment(project_path
+                                  )
     print(f"Proyecto '{project_name}' creado")
 
 
@@ -68,6 +72,15 @@ def initialize_git(project_path: Path) -> None:
 
     subprocess.run(
         ["git", "checkout", "-b", "develop"],
+        cwd=project_path,
+        check=True,
+    )
+
+
+
+def create_virtual_enviroment(project_path: Path) -> None:
+    subprocess.run(
+        ["python3", "-m", "venv", ".venv"],
         cwd=project_path,
         check=True,
     )
