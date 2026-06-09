@@ -5,6 +5,26 @@ The format is inspired by Keep a Changelog and this project adheres to Semantic 
 
 ---
 
+### [0.3.0] - 2026-06-09
+
+#### Added
+
+- Added optional virtual environment creation using the `--venv` flag.
+- Added support for automatic `.venv` generation during project creation.
+- Added `argparse` for command-line argument handling.
+- Added built-in CLI help and usage information.
+
+#### Improved
+
+- Improved CLI scalability for future options and templates.
+- Improved project bootstrapping workflow by reducing manual setup steps.
+
+#### Notes
+
+Projects can now be generated with a fully configured Python virtual environment, allowing development to begin immediately after creation.
+
+---
+
 ### [0.2.0] - 2026-06-07
 
 #### Added
