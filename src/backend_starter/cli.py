@@ -1,18 +1,27 @@
 
-import sys
+import argparse
 
 from backend_starter.generator import create_project
 
 
 def main() -> None:
-    if len(sys.argv) != 2:
-        print("Uso: backend-starter <nombre_proyecto>")
-        sys.exit(1)
+    parser = argparse.ArgumentParser(
+        description="Generate a backend project structure."
+    )
 
-    project_name = sys.argv[1]
+    parser.add_argument(
+        "project_name",
+        help="Name of the project to create."
+    )
+    
+    parser.add_argument(
+        "--venv",
+        action="store_true",
+        help="Create a virtual enviroment inside the project",
+    )
 
-    create_project(project_name)
-
+    args = parser.parse_args()
+    create_project(args.project_name, create_venv=args.venv)
 
 if __name__ == "__main__":
     main()
