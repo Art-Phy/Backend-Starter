@@ -2,7 +2,8 @@
   <img src="https://img.shields.io/badge/python-3.10+-blue.svg" />
   <img src="https://img.shields.io/badge/CLI-Project%20Generator-orange" />
   <img src="https://img.shields.io/badge/GitFlow-Automated-green" />
-  <img src="https://img.shields.io/badge/Version-v0.2.0-success" />
+  <img src="https://img.shields.io/badge/VirtualEnv-Optional-success" />
+  <img src="https://img.shields.io/badge/Version-v0.3.0-success" />
   <img src="https://img.shields.io/badge/License-MIT-lightgrey" />
 </p>
 
@@ -25,6 +26,8 @@ El objetivo es evitar repetir manualmente la creación de carpetas y archivos co
 - Creación de carpeta `tests/`.
 - Inicialización automática de repositorio **Git**
 - Creación automática de rama **develop**
+- Creación opcional de entorno virtual mediante `--venv`.
+- Ayuda integrada mediante `argparse`.
 
 #### Estructura generada
 
@@ -45,6 +48,7 @@ my_project/
 Desde la raíz del proyecto
 ```
 PYTHONPATH=src python3 -m backend_starter.cli my_project
+PYTHONPATH=src python3 -m backend_starter.cli my_project --venv
 ```
 
 #### Objetivo del proyecto
@@ -52,7 +56,6 @@ Este proyecto nace como una herramienta práctica para automatizar el arranque d
 
 Está pensado para crecer progresivamente con nuevas funcionalidades como:
 
-* Creación opcional de entorno virtual.
 * Plantillas para proyectos CLI.
 * Plantillas para proyectos FastAPI.
 * Instalación como comando global.
