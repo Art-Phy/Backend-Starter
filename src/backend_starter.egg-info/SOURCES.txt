@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+src/backend_starter/__init__.py
+src/backend_starter/cli.py
+src/backend_starter/generator.py
+src/backend_starter/templates.py
+src/backend_starter.egg-info/PKG-INFO
+src/backend_starter.egg-info/SOURCES.txt
+src/backend_starter.egg-info/dependency_links.txt
+src/backend_starter.egg-info/entry_points.txt
+src/backend_starter.egg-info/top_level.txt
