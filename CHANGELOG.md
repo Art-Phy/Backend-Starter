@@ -5,6 +5,25 @@ The format is inspired by Keep a Changelog and this project adheres to Semantic 
 
 ---
 
+### [0.4.0] - 2026-06-12
+
+#### Added
+
+- Added `pyproject.toml` project configuration.
+- Added installable CLI support through project scripts.
+- Added `backend-starter` as a command-line entry point.
+
+#### Improved
+
+- Improved usability by allowing the tool to be installed and executed as a real CLI command.
+- Prepared the project for future installation workflows such as `pipx`.
+
+#### Notes
+
+Backend Starter can now be installed locally as a Python CLI package, removing the need to run it through `PYTHONPATH`.
+
+---
+
 ### [0.3.0] - 2026-06-09
 
 #### Added
