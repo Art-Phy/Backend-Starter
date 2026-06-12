@@ -3,7 +3,8 @@
   <img src="https://img.shields.io/badge/CLI-Project%20Generator-orange" />
   <img src="https://img.shields.io/badge/GitFlow-Automated-green" />
   <img src="https://img.shields.io/badge/VirtualEnv-Optional-success" />
-  <img src="https://img.shields.io/badge/Version-v0.3.0-success" />
+  <img src="https://img.shields.io/badge/Installable-CLI-success" />
+  <img src="https://img.shields.io/badge/Version-v0.4.0-success" />
   <img src="https://img.shields.io/badge/License-MIT-lightgrey" />
 </p>
 
@@ -24,14 +25,15 @@ El objetivo es evitar repetir manualmente la creación de carpetas y archivos co
 - Creación de estructura `src/`.
 - Creación de paquete Python inicial.
 - Creación de carpeta `tests/`.
-- Inicialización automática de repositorio **Git**
-- Creación automática de rama **develop**
+- Inicialización automática de repositorio **Git**.
+- Creación automática de rama **develop**.
 - Creación opcional de entorno virtual mediante `--venv`.
 - Ayuda integrada mediante `argparse`.
+- Instalación como herramienta CLI mediante `pip install -e .`.
 
 #### Estructura generada
 
-```text
+```
 my_project/
 ├── README.md
 ├── CHANGELOG.md
@@ -44,24 +46,40 @@ my_project/
     └── __init__.py
 ```
 
-#### Uso Actual
-Desde la raíz del proyecto
+#### Instalación
+
+Desde la raíz del proyecto:
+
 ```
-PYTHONPATH=src python3 -m backend_starter.cli my_project
-PYTHONPATH=src python3 -m backend_starter.cli my_project --venv
+python3 -m venv .venv
+source .venv/bin/activate
+
+python -m pip install --upgrade pip
+pip install -e .
+```
+
+#### Uso Actual
+
+```
+backend-starter my_project
+
+backend-starter my_project --venv
 ```
 
 #### Objetivo del proyecto
+
 Este proyecto nace como una herramienta práctica para automatizar el arranque de proyectos backend en Python.
 
 Está pensado para crecer progresivamente con nuevas funcionalidades como:
 
 * Plantillas para proyectos CLI.
 * Plantillas para proyectos FastAPI.
-* Instalación como comando global.
+* Instalación mediante `pipx`.
 
 #### Tecnologías
+
 * Python 3
 * pathlib
-* CLI básica con sys.argv
-* Subprocess
+* argparse
+* subprocess
+* pyproject.toml
