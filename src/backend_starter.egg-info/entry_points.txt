@@ -1,2 +1,0 @@
-[console_scripts]
-backend-starter = backend_starter.cli:main
