@@ -4,7 +4,7 @@
   <img src="https://img.shields.io/badge/GitFlow-Automated-green" />
   <img src="https://img.shields.io/badge/VirtualEnv-Optional-success" />
   <img src="https://img.shields.io/badge/Installable-CLI-success" />
-  <img src="https://img.shields.io/badge/Version-v0.4.0-success" />
+  <img src="https://img.shields.io/badge/Version-v0.5.0-success" />
   <img src="https://img.shields.io/badge/License-MIT-lightgrey" />
 </p>
 
@@ -30,6 +30,7 @@ El objetivo es evitar repetir manualmente la creación de carpetas y archivos co
 - Creación opcional de entorno virtual mediante `--venv`.
 - Ayuda integrada mediante `argparse`.
 - Instalación como herramienta CLI mediante `pip install -e .`.
+- Compatible con instalación mediante `pipx`.
 
 #### Estructura generada
 
@@ -64,7 +65,17 @@ pip install -e .
 backend-starter my_project
 
 backend-starter my_project --venv
+
+
+Uso recomendado:
+
+`brew install pipx`
+
+`pipx ensurepath`
+
+pipx install git+https://github.com/Art-Phy/backend-starter.git
 ```
+
 
 #### Objetivo del proyecto
 
@@ -74,7 +85,8 @@ Está pensado para crecer progresivamente con nuevas funcionalidades como:
 
 * Plantillas para proyectos CLI.
 * Plantillas para proyectos FastAPI.
-* Instalación mediante `pipx`.
+* Integración con Docker.
+* Integración con GitHub Actions.
 
 #### Tecnologías
 

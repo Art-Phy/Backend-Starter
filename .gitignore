@@ -1,4 +1,5 @@
 .venv/
+dev/
 __pycache__/
 *.pyc
 .pytest_cache/
@@ -6,4 +7,7 @@ __pycache__/
 htmlcov/
 .env
 .DS_Store
-dev/
+*.egg-info
+*.egg-info/
+build/
+dist/

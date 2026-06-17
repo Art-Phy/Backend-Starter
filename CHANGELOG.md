@@ -5,6 +5,28 @@ The format is inspired by Keep a Changelog and this project adheres to Semantic 
 
 ---
 
+### [0.5.0] - 2026-06-17
+
+#### Added
+
+- Added support for installation through `pipx`.
+- Added installation documentation for end users.
+- Added `pipx` usage examples to the README.
+
+#### Improved
+
+- Improved project creation feedback with the generated project path.
+- Improved package installation workflow validation.
+- Updated `.gitignore` to exclude packaging artifacts.
+- Renamed `create_virtual_enviroment()` to `create_virtual_environment()`.
+
+#### Fixed
+
+- Fixed packaging-related artifacts generated during installation tests.
+- Fixed minor usability issues detected during real-world installation validation.
+
+---
+
 ### [0.4.0] - 2026-06-12
 
 #### Added
