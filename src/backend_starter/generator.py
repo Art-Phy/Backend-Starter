@@ -57,9 +57,11 @@ def create_project(project_name: str, create_venv: bool = False) -> None:
     initialize_git(project_path)
 
     if create_venv:
-        create_virtual_enviroment(project_path
+        create_virtual_environment(project_path
                                   )
-    print(f"Proyecto '{project_name}' creado")
+    print(f"✅Proyecto '{project_name}' creado satisfactoriamente.\n" 
+          f"📁 Ruta: {project_path.resolve()}"
+    ) 
 
 
 
@@ -78,7 +80,7 @@ def initialize_git(project_path: Path) -> None:
 
 
 
-def create_virtual_enviroment(project_path: Path) -> None:
+def create_virtual_environment(project_path: Path) -> None:
     subprocess.run(
         ["python3", "-m", "venv", ".venv"],
         cwd=project_path,
