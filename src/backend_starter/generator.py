@@ -6,6 +6,7 @@ from backend_starter.templates import(
     CHANGELOG_TEMPLATE,
     GITIGNORE_TEMPLATE,
     README_TEMPLATE,
+    AGENT_TEMPLATE,
 )
 
 
@@ -41,6 +42,11 @@ def create_project(project_name: str, create_venv: bool = False) -> None:
 
     (project_path / ".gitignore").write_text(
         GITIGNORE_TEMPLATE,
+        encoding="utf-8",
+    )
+
+    (project_path / "AGENTS.md").write_text(
+        AGENT_TEMPLATE,
         encoding="utf-8",
     )
 
