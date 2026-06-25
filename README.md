@@ -4,7 +4,7 @@
   <img src="https://img.shields.io/badge/GitFlow-Automated-green" />
   <img src="https://img.shields.io/badge/VirtualEnv-Optional-success" />
   <img src="https://img.shields.io/badge/Installable-CLI-success" />
-  <img src="https://img.shields.io/badge/Version-v0.5.0-success" />
+  <img src="https://img.shields.io/badge/Version-v0.6.0-success" />
   <img src="https://img.shields.io/badge/License-MIT-lightgrey" />
 </p>
 
@@ -22,6 +22,8 @@ El objetivo es evitar repetir manualmente la creación de carpetas y archivos co
   - CHANGELOG.md
   - requirements.txt
   - .gitignore
+  - AGENT.md
+  - PROJECT.md
 - Creación de estructura `src/`.
 - Creación de paquete Python inicial.
 - Creación de carpeta `tests/`.
@@ -34,10 +36,12 @@ El objetivo es evitar repetir manualmente la creación de carpetas y archivos co
 
 #### Estructura generada
 
-```
+```text
 my_project/
 ├── README.md
 ├── CHANGELOG.md
+├── AGENT.md
+├── PROJECT.md
 ├── requirements.txt
 ├── .gitignore
 ├── src/
@@ -59,7 +63,7 @@ python -m pip install --upgrade pip
 pip install -e .
 ```
 
-#### Uso Actual
+#### Uso
 
 ```
 backend-starter my_project

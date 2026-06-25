@@ -5,6 +5,23 @@ The format is inspired by Keep a Changelog and this project adheres to Semantic 
 
 ---
 
+### [0.6.0] - 2026-06-25
+
+#### Added
+
+- Added `AGENT.md` template.
+- Added `PROJECT.md` template.
+
+#### Improved
+
+- Updated `.gitignore` with additional ignored files.
+
+#### Notes
+
+Backend Starter now includes `AGENT.md` and `PROJECT.md` templates with simple guidance, allowing users to customize them according to their own workflow and project needs.
+
+---
+
 ### [0.5.0] - 2026-06-17
 
 #### Added
