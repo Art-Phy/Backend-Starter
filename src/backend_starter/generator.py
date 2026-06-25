@@ -7,6 +7,7 @@ from backend_starter.templates import(
     GITIGNORE_TEMPLATE,
     README_TEMPLATE,
     AGENT_TEMPLATE,
+    PROJECT_TEMPLATE,
 )
 
 
@@ -47,6 +48,11 @@ def create_project(project_name: str, create_venv: bool = False) -> None:
 
     (project_path / "AGENTS.md").write_text(
         AGENT_TEMPLATE,
+        encoding="utf-8",
+    )
+
+    (project_path / "PROJECT.md").write_text(
+        PROJECT_TEMPLATE,
         encoding="utf-8",
     )
 
