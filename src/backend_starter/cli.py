@@ -19,9 +19,15 @@ def main() -> None:
         action="store_true",
         help="Create a virtual enviroment inside the project",
     )
-
+    
+    parser.add_argument(
+    "--ai",
+    action="store_true",
+    help="Create AI/context documentation templates.",
+    )
+    
     args = parser.parse_args()
-    create_project(args.project_name, create_venv=args.venv)
+    create_project(args.project_name, create_venv=args.venv, create_ai_docs=args.ai)
 
 if __name__ == "__main__":
     main()
