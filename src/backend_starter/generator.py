@@ -2,17 +2,20 @@
 import subprocess
 from pathlib import Path
 
-from backend_starter.templates import(
-    CHANGELOG_TEMPLATE,
-    GITIGNORE_TEMPLATE,
-    README_TEMPLATE,
+from backend_starter.templates.ai import (
     AGENT_TEMPLATE,
     PROJECT_TEMPLATE,
 )
 
+from backend_starter.templates.basic import (
+    CHANGELOG_TEMPLATE,
+    GITIGNORE_TEMPLATE,
+    README_TEMPLATE,
+)
 
 
-def create_project(project_name: str, create_venv: bool = False) -> None:
+
+def create_project(project_name: str, create_venv: bool = False, create_ai_docs: bool = False) -> None:
     project_path = Path(project_name)
 
     package_name = project_name.replace("-", "_")
@@ -46,15 +49,16 @@ def create_project(project_name: str, create_venv: bool = False) -> None:
         encoding="utf-8",
     )
 
-    (project_path / "AGENTS.md").write_text(
-        AGENT_TEMPLATE,
-        encoding="utf-8",
-    )
+    if create_ai_docs:
+        (project_path / "AGENT.md").write_text(
+            AGENT_TEMPLATE,
+            encoding="utf-8",
+        )
 
-    (project_path / "PROJECT.md").write_text(
-        PROJECT_TEMPLATE,
-        encoding="utf-8",
-    )
+        (project_path / "PROJECT.md").write_text(
+            PROJECT_TEMPLATE,
+            encoding="utf-8",
+        )
 
     (src_path / "__init__.py").write_text(
         "",

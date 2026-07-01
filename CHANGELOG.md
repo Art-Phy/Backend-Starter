@@ -5,6 +5,30 @@ The format is inspired by Keep a Changelog and this project adheres to Semantic 
 
 ---
 
+### [0.7.0] - 2026-07-01
+
+#### Added
+
+- Added optional `--ai` flag.
+- Added conditional generation of `AGENT.md`.
+- Added conditional generation of `PROJECT.md`.
+
+#### Changed
+
+- Refactored project templates into dedicated modules.
+- Split templates into `basic.py`, `ai.py`, `fastapi.py` and `command_line.py`.
+
+#### Improved
+
+- Improved project architecture by organizing templates by category.
+- Updated README to reflect the new optional AI documentation workflow.
+
+#### Notes
+
+- AI-related documentation is now optional and generated only when explicitly requested with the `--ai`flag, making Backend Starter more flexible for different development workflows.
+
+---
+
 ### [0.6.0] - 2026-06-25
 
 #### Added
