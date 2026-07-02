@@ -111,7 +111,7 @@ Con documentación para IA:
 
 ```bash
 backend-starter my_project --venv --ai
-
+```
 
 #### Objetivo del proyecto
 
