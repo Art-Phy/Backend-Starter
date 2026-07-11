@@ -21,13 +21,20 @@ def main() -> None:
     )
     
     parser.add_argument(
-    "--ai",
-    action="store_true",
-    help="Create AI/context documentation templates.",
+        "--ai",
+        action="store_true",
+        help="Create AI/context documentation templates.",
+    )
+    
+    parser.add_argument(
+        "--template",
+        choices=["basic", "fastapi", "command-line"],
+        default="basic",
+        help="Project template to generate",
     )
     
     args = parser.parse_args()
-    create_project(args.project_name, create_venv=args.venv, create_ai_docs=args.ai)
+    create_project(args.project_name, create_venv=args.venv, create_ai_docs=args.ai, template=args.template)
 
 if __name__ == "__main__":
     main()
