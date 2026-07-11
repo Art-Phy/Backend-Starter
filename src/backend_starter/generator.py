@@ -22,28 +22,37 @@ def create_project(project_name: str, create_venv: bool = False, create_ai_docs:
 
     project_path.mkdir()
 
-    template_builder = TEMPLATE_BUILDERS[template]
-    template_builder(project_path, package_name)
+    TEMPLATE_BUILDERS[template](
+        project_path,
+        package_name,
+    )
 
     if create_ai_docs:
-        (project_path / "AGENT.md").write_text(
-            AGENT_TEMPLATE,
-            encoding="utf-8",
-        )
-
-        (project_path / "PROJECT.md").write_text(
-            PROJECT_TEMPLATE,
-            encoding="utf-8",
-        )
+        create_ai_documentation(project_path)
 
     initialize_git(project_path)
 
     if create_venv:
-        create_virtual_environment(project_path
-                                  )
+        create_virtual_environment(project_path)
+    
     print(f"✅Proyecto '{project_name}' creado satisfactoriamente.\n" 
           f"📁 Ruta: {project_path.resolve()}"
     ) 
+
+
+
+def create_ai_documentation(project_path: Path) -> None:
+    """Create optional AI documentation files"""
+
+    (project_path / "AGENT.md").write_text(
+        AGENT_TEMPLATE,
+        encoding="utf-8",
+    )
+
+    (project_path / "PROJECT.md").write_text(
+        PROJECT_TEMPLATE,
+        encoding="utf-8",
+    )
 
 
 
