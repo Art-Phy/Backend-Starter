@@ -88,3 +88,45 @@ docs/_build/
 target/
 *.zip
 """
+
+
+from pathlib import Path
+
+
+def create_basic_structure(project_path: Path, package_name: str) -> None:
+    """Create the basic Python project structure"""
+    src_path = project_path / "src" / package_name
+    tests_path = project_path / "tests"
+
+    src_path.mkdir(parents=True)
+    tests_path.mkdir()
+
+    (project_path / "README.md").write_text(
+        README_TEMPLATE.format(project_name=project_path.name),
+        encoding="utf-8",
+    )
+
+    (project_path / "CHANGELOG.md").write_text(
+        CHANGELOG_TEMPLATE,
+        encoding="utf-8",
+    )
+
+    (project_path / "requirements.txt").write_text(
+        "",
+        encoding="utf-8",
+    )
+
+    (project_path / ".gitignore").write_text(
+        GITIGNORE_TEMPLATE,
+        encoding="utf-8,"
+    )
+
+    (src_path / "__init__.py").write_text(
+        "",
+        encoding="utf-8",
+    )
+
+    (tests_path / "__init__,py").write_text(
+        "",
+        encoding="utf-8",
+    )

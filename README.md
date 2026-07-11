@@ -6,8 +6,7 @@
   <img src="https://img.shields.io/badge/VirtualEnv-Optional-success" />
   <img src="https://img.shields.io/badge/Installable-CLI-success" />
   <img src="https://img.shields.io/badge/AI%20Templates-Optional-blueviolet" />
-  <img src="https://img.shields.io/badge/Version-v0.7.0-success" />
-  <img src="https://img.shields.io/badge/License-MIT-lightgrey" />
+  <img src="https://img.shields.io/badge/Version-v0.8.0-success" />
 </p>
 
 ### Backend Starter
@@ -36,6 +35,7 @@ El objetivo es evitar repetir manualmente la creación de carpetas y archivos co
 - Ayuda integrada mediante `argparse`.
 - Instalación como herramienta CLI mediante `pip install -e .`.
 - Compatible con instalación mediante `pipx`.
+- Preparado para futuras plantillas (`fastapi`, `command-line`).
 
 #### Estructura generada
 
@@ -120,7 +120,7 @@ Backend Starter nace como una herramienta para automatizar el arranque de proyec
 Continuará evolucionando con nuevas funcionalidades como:
 
 - Plantillas para proyectos CLI.
-- Plantillas para proyectos FastAPI.
+- Plantillas para proyectos FastAPI(**En desarrollo**)
 - Integración con Docker.
 - Integración con GitHub Actions.
 

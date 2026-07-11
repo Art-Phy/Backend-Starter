@@ -5,6 +5,33 @@ The format is inspired by Keep a Changelog and this project adheres to Semantic 
 
 ---
 
+### [0.8.0] - 2026-07-11
+
+#### Added
+
+- Added modular project template system.
+- Added `--template` command-line option.
+- Added template registry for project generation.
+- Added initial `fastapi` template module.
+- Added initial `command_line` template module.
+
+#### Changed
+
+- Refactored project generation to delegate template creation.
+- Moved project templates into dedicated modules.
+- Simplified `generator.py` responsibilities.
+
+#### Improved
+
+- Improved project architecture for future extensibility.
+- Reduced coupling between project generation and template implementation.
+
+#### Notes
+
+Backend Starter now uses a modular template architecture, making it easy to add new project types without modifying the core generator.
+
+---
+
 ### [0.7.0] - 2026-07-01
 
 #### Added

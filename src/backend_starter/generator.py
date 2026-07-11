@@ -2,6 +2,7 @@
 import subprocess
 from pathlib import Path
 
+from backend_starter.templates import TEMPLATE_BUILDERS
 from backend_starter.templates.ai import (
     AGENT_TEMPLATE,
     PROJECT_TEMPLATE,
@@ -15,69 +16,43 @@ from backend_starter.templates.basic import (
 
 
 
-def create_project(project_name: str, create_venv: bool = False, create_ai_docs: bool = False) -> None:
+def create_project(project_name: str, create_venv: bool = False, create_ai_docs: bool = False, template: str = "basic") -> None:
     project_path = Path(project_name)
-
     package_name = project_name.replace("-", "_")
 
     project_path.mkdir()
 
-    src_path = project_path / "src" / package_name
-    tests_path = project_path / "tests"
-
-    src_path.mkdir(parents=True)
-    tests_path.mkdir()
-
-
-    (project_path / "README.md").write_text(
-        README_TEMPLATE.format(project_name=project_name),
-        encoding="utf-8",
-    )
-
-    (project_path / "CHANGELOG.md").write_text(
-        CHANGELOG_TEMPLATE,
-        encoding="utf-8",
-    )
-
-    (project_path / "requirements.txt").write_text(
-        "",
-        encoding="utf-8",
-    )
-
-    (project_path / ".gitignore").write_text(
-        GITIGNORE_TEMPLATE,
-        encoding="utf-8",
+    TEMPLATE_BUILDERS[template](
+        project_path,
+        package_name,
     )
 
     if create_ai_docs:
-        (project_path / "AGENT.md").write_text(
-            AGENT_TEMPLATE,
-            encoding="utf-8",
-        )
-
-        (project_path / "PROJECT.md").write_text(
-            PROJECT_TEMPLATE,
-            encoding="utf-8",
-        )
-
-    (src_path / "__init__.py").write_text(
-        "",
-        encoding="utf-8",
-    )
-
-    (tests_path / "__init__.py").write_text(
-        "",
-        encoding="utf-8",
-    )
+        create_ai_documentation(project_path)
 
     initialize_git(project_path)
 
     if create_venv:
-        create_virtual_environment(project_path
-                                  )
+        create_virtual_environment(project_path)
+    
     print(f"✅Proyecto '{project_name}' creado satisfactoriamente.\n" 
           f"📁 Ruta: {project_path.resolve()}"
     ) 
+
+
+
+def create_ai_documentation(project_path: Path) -> None:
+    """Create optional AI documentation files"""
+
+    (project_path / "AGENT.md").write_text(
+        AGENT_TEMPLATE,
+        encoding="utf-8",
+    )
+
+    (project_path / "PROJECT.md").write_text(
+        PROJECT_TEMPLATE,
+        encoding="utf-8",
+    )
 
 
 
