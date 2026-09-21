@@ -27,7 +27,8 @@ uvicorn[standard]
 
 
 def create_fastapi_structure(project_path: Path, package_name: str) -> None:
-    """Create a basic FasAPI project structure"""
+    """Create a basic FastAPI project structure"""
+
     create_basic_structure(project_path, package_name)
 
     package_path = project_path / "src" / package_name

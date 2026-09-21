@@ -126,7 +126,7 @@ def create_basic_structure(project_path: Path, package_name: str) -> None:
         encoding="utf-8",
     )
 
-    (tests_path / "__init__,py").write_text(
+    (tests_path / "__init__.py").write_text(
         "",
         encoding="utf-8",
     )
