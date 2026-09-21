@@ -36,3 +36,22 @@ def test_fastapi_template_creates_requirements(tmp_path):
 
     assert "fastapi" in requirements
     assert "uvicorn[standard]" in requirements
+
+
+
+def test_fastapi_template_creates_application(tmp_path):
+    """FastAPI template should generate an application instance"""
+
+    project_path = tmp_path / "lisa"
+    project_path.mkdir()
+
+    create_fastapi_structure(
+        project_path,
+        "lisa",
+    )
+
+    main_file = project_path / "src" / "lisa" / "main.py"
+    content = main_file.read_text(encoding="utf-8")
+
+    assert "from fastapi import FastAPI" in content
+    assert "app = FastAPI(" in content
