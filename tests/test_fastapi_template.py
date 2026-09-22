@@ -55,3 +55,21 @@ def test_fastapi_template_creates_application(tmp_path):
 
     assert "from fastapi import FastAPI" in content
     assert "app = FastAPI(" in content
+
+
+
+def test_fastapi_readme_template_uses_package_name(tmp_path):
+    """FastAPI README should use the importable package name"""
+
+    project_path = tmp_path / "bart-api"
+    project_path.mkdir()
+
+    create_fastapi_structure(
+        project_path,
+        "bart_api",
+    )
+
+    readme_file = project_path / "README.md"
+    content = readme_file.read_text(encoding="utf-8")
+
+    assert "uvicorn bart_api.main:app --app-dir src --reload" in content
