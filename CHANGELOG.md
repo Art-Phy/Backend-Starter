@@ -5,6 +5,38 @@ The format is inspired by Keep a Changelog and this project adheres to Semantic 
 
 ---
 
+### [0.9.0] - 2026-09-22
+
+#### Added
+
+- Added the first functional FastAPI project template.
+- Added a minimal FastAPI application with a default `GET /` endpoint.
+- Added FastAPI-specific dependencies:
+  - `fastapi`
+  - `uvicorn[standard]`
+- Added a dedicated README template for generated FastAPI projects.
+- Added installation and development server instructions to generated FastAPI projects.
+- Added Swagger documentation access instructions through `/docs`.
+- Added automated tests for the FastAPI template.
+
+#### Changed
+
+- Extended the modular template system introduced in v0.8.0 with a fully functional project type.
+- FastAPI projects now specialize the base project structure with their own application entry point, dependencies and documentation.
+- Generated FastAPI README files now use the importable Python package name in the Uvicorn command.
+
+#### Improved
+
+- Improved handling of project names containing hyphens by using the normalized package name in FastAPI execution instructions.
+- Improved confidence in template generation through automated `pytest` coverage.
+- Improved generated FastAPI projects so they can be installed and executed immediately after creation.
+
+#### Notes
+
+Backend Starter can now generate a minimal but fully functional FastAPI application.
+
+---
+
 ### [0.8.0] - 2026-07-11
 
 #### Added
